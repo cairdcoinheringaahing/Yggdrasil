@@ -21,4 +21,4 @@ Yggdrasil treats its source code and its memory as the same. The memory model us
  Yggdrasil technically stores each character in the tree as it's Unicode code point, and treats strings as lists of code points. Before turning the source code into a tree however, Yggdrasil makes 2 substitutions:
  
 - All `%` in the source code are replaced with NULL bytes
-- Each `_` is repalced by the seqeuntial command line arguments, with missing arguments filled with 0
+- Each `_` is replaced by the sequential command line arguments, with missing arguments filled with 0
