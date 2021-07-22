@@ -121,13 +121,13 @@ def run_cmds(code, memory, current_node, parents, index = 0):
                 run_cmds(cmds, memory, current_node, [])
 
         if char == '?':
-                if tree.root:
+                if current_node.root:
                         current_node = current_node.left
                 else:
                         current_node = current_node.right
 
         if char == '#':
-                if tree.root:
+                if current_node.root:
                         current_node = memory
                         parents = []
         
