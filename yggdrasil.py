@@ -159,7 +159,7 @@ def main(code, argv, mem_flag, debug_flag):
 
         while index < len(code):
                 index, current_node, parents = run_cmds(code, memory, current_node, parents, index)
-		index += 1
+                index += 1
                 if debug_flag:
                         print(memory)
 
