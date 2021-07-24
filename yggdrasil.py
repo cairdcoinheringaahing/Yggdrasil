@@ -122,9 +122,9 @@ def run_cmds(code, memory, current_node, parents, index = 0):
 
         if char == '?':
                 if current_node.root:
-                        current_node = current_node.left
+                        current_node.root = current_node.left.root
                 else:
-                        current_node = current_node.right
+                        current_node.root = current_node.right.root
 
         if char == '#':
                 if current_node.root:
@@ -144,7 +144,7 @@ def run_cmds(code, memory, current_node, parents, index = 0):
                 if scan:
                         traverse(scan, memory)
 
-        return index
+        return (index, current_node, parents)
 
 def main(code, argv, mem_flag, debug_flag):
 	if not code: return
@@ -158,7 +158,8 @@ def main(code, argv, mem_flag, debug_flag):
                 print(memory)
 
         while index < len(code):
-                index = run_cmds(code, memory, current_node, parents, index) + 1
+                index, current_node, parents = run_cmds(code, memory, current_node, parents, index)
+                index += 1
                 if debug_flag:
                         print(memory)
 
