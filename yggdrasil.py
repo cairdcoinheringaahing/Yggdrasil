@@ -147,7 +147,7 @@ def run_cmds(code, memory, current_node, parents, index = 0):
         return (index, current_node, parents)
 
 def main(code, argv, mem_flag, debug_flag):
-	if not code: return
+        if not code: return
         chars = list(map(lambda c: None if c == '_' else ord(c) * (c != '%'), code))
         memory = set_nodes(form_tree(chars), argv)
         current_node = memory
